@@ -9,6 +9,7 @@ const wayNew = path.join(__dirname + '/project-dist/' + '/assets');
 fs.access(__dirname + '/project-dist/', async (err) => {
   if (err && err.code === 'ENOENT') {
     buildPage();
+    copyDir(wayOld, wayNew);
   } else {
       await deleteDir();
       buildPage();
